@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #dce48d;">
+  <div class="container-fluid">
+    <a class="navbar-brand"  routerLink="/" style="font-size: 25px; color: #4a4fdb;">Plan My Trip</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/">
+            <i class="fa fa-home" aria-hidden="true"></i>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/package">Package</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" >Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" >About</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedin() && (logginUser.role=='admin')">
+          <a class="nav-link" routerLinkActive="active" routerLink="/add-property">add trip</a>
+        </li>
+      </ul>
+      <div>
+        <ul class="nav navbar-nav">
+            <li *ngIf="!loggedin()" class="nav-item">
+                <a class="nav-link"
+                routerLink="user/register"
+            routerLinkActive="active"
+            >Register</a>
+            </li>
+            <li *ngIf="!loggedin()" class="nav-item">
+              <a class="nav-link"
+              routerLink="user/login"
+            routerLinkActive="active"
+            >login</a>
+          </li>
+          <div *ngIf="loggedin()" class="dropdown"style="margin-right: 80px;">
+            <a class="text-blue dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Welcome {{logginUser.unique_name}}
+             </a>
+            <ul class="dropdown-menu" >
+              <li><a class="dropdown-item" routerLink="/" routerLinkActive="active">View Dashboard</a></li>
+              <li><a class="dropdown-item" (click)="profileOpen()">My Profile</a></li>
+              <li><a class="dropdown-item" routerLinkActive="active" routerLink="/myBooking">My Booking</a></li>
+              <li><a class="dropdown-item" (click)="onlogout()">logout</a></li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!--Dialog box for Login user details-->
+<div *ngIf="loginDialog" style="margin-top: 7%; margin-left: 20%;margin-right: 25%;">
+  <div class="card shadow">
+    <h6>Login User Details:</h6>
+      <div class="row ">
+                  <div class="card-body" style="margin-left:5%;">
+                    <h5>Name:{{ logginUser.userName}}</h5>
+                    <h4 >Mobile: {{logginUser.mobile}}</h4>
+                    <h6>Email: {{logginUser.email}}</h6>
+                  </div>
+                  <mat-dialog-actions>
+                    <button style="width: 800px; margin-bottom: 10px; margin-left: 10px;"
+              mat-dialog-close (click)="profileClose()">Close</button>
+                  </mat-dialog-actions>
+
+        </div>
+   </div>
+
+</div>

@@ -1,0 +1,71 @@
+<!--Reactive form group-->
+<div class="row mb-5">
+  <div class="col-8 shadow-lg p-0 bg-white">
+    <div class="card">
+      <div class=" card-header">
+           <h3> Add new Trip details!</h3>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" [formGroup]="addPropertyForm">
+          <div class="tab-panel">
+            <tabset class="member-tabset" #formTabs>
+              <tab heading="Basic Info" >
+                <div class="form-group col-12">
+                  <label for="name">Location</label>
+                  <input type="text" class=" form-control" formControlName="name" required [(ngModel)]="tripView.name">
+                </div>
+                <div class="form-group col-12">
+                  <label for="price">Price</label>
+                  <input type="number" class=" form-control" formControlName="price" required [(ngModel)]="tripView.price">
+                </div>
+                <div class="form-group col-12">
+                  <label for="name">Full address</label>
+                  <input type="text" class=" form-control" formControlName="address" required [(ngModel)]="tripView.address">
+                </div>
+                <div class="form-group col-12">
+                  <label>Description(about)</label>
+                  <textarea type="text"
+                  class="form-control"
+                  formControlName="description"
+                  [(ngModel)]="tripView.description"
+                  rows="6"></textarea>
+                </div>
+                <div class="form-group col-12" style="margin-top: 7px;">
+                  <button type="button" class="btn btn-primary btn-block"(click)="selectTab(1)" >Next</button>
+                </div>
+              </tab>
+              <tab heading="Photos">
+                Photos
+                <img [src]="url" height="200"><br>
+                  <div class="form-group col-12">
+                    <div class="photo-control">
+                      <input type="file" (change)="onselectFile($event)" >
+                        <button class="mt-5" type="button">Upload</button> <br>
+                        This is under construction
+                    </div>
+                  </div>
+
+                <button type="button" class="btn btn-primary btn-block mr-2"(click)="selectTab(0)">back</button>
+                <button type="reset" class="btn btn-primary mr-2">Cancle</button>
+                <button [disabled]="!addPropertyForm.valid" type="submit" class="btn btn-primary mr-2">Save</button>
+              </tab>
+            </tabset>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class=" card-header">
+      <h3>New Trip privew</h3>
+    </div>
+      <div class="shadow-lg p-3 bg-white">
+        <app-property-card [property]="tripView" [hideIcons]="true"></app-property-card>
+      </div>
+ </div>
+</div>
+
+
+
+

@@ -1,0 +1,29 @@
+.conform-dialog-container {
+  border-radius: .25em .25em .4em .4em;
+  padding: 0px;
+}
+.conform-dialog-container .content-container{
+  margin: 5px 5px 15px 5px;
+  color: #8f9cb5;
+  display: flex;
+}
+
+.conform-dialog-container .content-container #close-icon{
+  cursor: pointer;
+  margin-right: 0%;
+  size: 100px;
+}
+.conform-dialog-container #yes-button{
+  height: 30px;
+  width: 100px;
+  background-color: #5c4d97;
+  color: white;
+  border-radius: 0px;
+}
+.conform-dialog-container #no-button{
+  height: 30px;
+  width: 100px;
+  background-color: #be7bb1;
+  color: white;
+  border-radius: 0px;
+}

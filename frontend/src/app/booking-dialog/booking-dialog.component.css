@@ -1,0 +1,46 @@
+.card .card-details{
+  min-height: 450px;
+}
+.card img{
+  padding: 10px;
+  height: 250px;
+}
+.card-img-wrapper{
+  overflow:hidden;
+  position: relative;
+}
+.card-body h2{
+  font-family: fantasy;
+  color: #0069d9;
+}
+.font-highligt{
+  font-style: italic;
+  color: red;
+}
+
+.mat-dialog-title{
+  color: blue;
+  font-family: Apple Chancery, cursive;
+  font-size: 55px;
+  margin-left: 40%;
+}
+
+.member-icons{
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0;
+  }
+  .example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+

@@ -1,0 +1,159 @@
+<div [hidden]="closeIcon">
+    <!--Booking Details Input From User-->
+  <h1 mat-dialog-title>Booking Details</h1>
+  <div mat-dialog-content>
+    <div class="row shadow">
+      <div class="col-sm-4 p-0">
+        <div class="card">
+            <div class="card-img-wrapper">
+              <img class="propImg" src="assets/image/img-default.jpg"alt="">
+            <div class="card-body p-2">
+              <form [formGroup]="tripDetails">
+              <h2>{{tripDetails.get('Location')?.value}}</h2>
+              <h4 >{{tripDetails.get('Address')?.value}}</h4>
+              <h5 >Price <span class="font-highligt">₹ {{tripDetails.get('Price')?.value}} </span>/Person</h5>
+              </form>
+            </div>
+            <div class="card-footer">
+              <div class="btn-group d-flex">
+                <button class="btn btn-primary">Like</button>
+                <button class="btn btn-success">Message</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+      <div class="col-sm-8 p-5">
+      <form (ngSubmit)="onSubmit()"[formGroup]="BookingDetailsForm">
+        <div class="card-details">
+          <div class="row">
+            <div class="col-sm-4 p-0">
+              <!--Name-->
+              <p>
+                <mat-form-field appearance="outline" class="mat-form-field col-xxl-12">
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Enter Name" formControlName="name">
+                  <mat-icon matSuffix>☺</mat-icon>
+                </mat-form-field>
+              </p>
+
+            </div>
+            <div class="col-sm-4 p-0">
+              <!--email-->
+              <div class="mat-form-field col-xxl-12"style="margin-left: 150px;">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input type="email" matInput formControlName="email"  placeholder="Ex. pat@example.com">
+                  <mat-icon matSuffix>☺</mat-icon>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-sm-4 p-0">
+              <!--Mobile-->
+              <p>
+                <mat-form-field appearance="outline" style="width: 350px;">
+                  <mat-label>Mobile</mat-label>
+                  <input type="number" [maxLength]="10" matInput placeholder="Enter Mobile Number" formControlName="mobile">
+                  <mat-icon matSuffix>☺</mat-icon>
+
+                </mat-form-field>
+              </p>
+
+            </div>
+            <div class="col-sm-4 p-0">
+              <div class="example-container" style="width: 280px; margin-left: 150px;">
+                <!--date -->
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Travelling Date</mat-label>
+                    <input type="date" matInput placeholder="mm/dd/yyyy" formControlName="date">
+                    <mat-icon matSuffix></mat-icon>
+                  </mat-form-field>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div style="margin-left: -10px;">
+              <!--Number of People-->
+              <p>
+                <mat-form-field appearance="outline" style="width: 350px;">
+                  <mat-label>Person</mat-label>
+                  <input type="number" matInput placeholder="Enter Number of person" formControlName="person">
+                  <mat-icon matSuffix>☺</mat-icon>
+
+                </mat-form-field>
+              </p>
+            </div >
+            <mat-dialog-actions>
+              <button mat-raised-button color="warn" style="width: 700px; margin-bottom: 10px; margin-left: 7px;"
+              mat-dialog-close>Close</button>
+              <button mat-raised-button color="primary" style="width: 700px;"
+              [disabled]="!BookingDetailsForm.valid" type="submit" (click)="goIngForConformBooking()">Proceed</button>
+            </mat-dialog-actions>
+
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Show All Booking details to user-->
+
+<div [hidden]="conformIcon">
+    <h1 mat-dialog-title>User Booking Details</h1>
+
+    <div mat-dialog-content>
+      <div class="row shadow">
+          <div class="col-sm-4 p-0">
+              <div class="card">
+                  <div class="card-img-wrapper">
+                    <img class="propImg" src="assets/image/img-default.jpg"alt="">
+                  <div class="card-body p-2">
+                    <form [formGroup]="tripDetails">
+                    <h2>{{tripDetails.get('Location')?.value}}</h2>
+                    <h4 >{{tripDetails.get('Address')?.value}}</h4>
+                    <h5 >Price <span class="font-highligt">₹ {{tripDetails.get('Price')?.value}} </span>/Person</h5>
+                    </form>
+                  </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-sm-6 p-0" style="margin-left: 30px;">
+            <form [formGroup]="BookingDetailsForm">
+              <div class="card-details">
+                <hr />
+                   <div style="margin-left: 200px;">
+                       <!--Name-->
+                      <h6><strong>Name: </strong>{{BookingDetailsForm.get('name')?.value}}</h6>
+
+                      <!--email-->
+                      <h6><strong>email:</strong> {{BookingDetailsForm.get('email')?.value}}</h6>
+                      <!--Mobile-->
+                      <h6><strong>mobile: </strong>{{BookingDetailsForm.get('mobile')?.value}}</h6>
+
+                    <!--dare-->
+                        <h6>Booking Date: {{BookingDetailsForm.get('date')?.value}}</h6>
+                      <!--Number of People-->
+                      <h6><strong>No. of Person:</strong> {{BookingDetailsForm.get('person')?.value}}</h6>
+                      <hr width="80%" />
+                      <h4>Total Price: <span class="font-highligt">₹ {{totalPrice}}</span> </h4>
+                   </div>
+                  <mat-dialog-actions>
+                    <button mat-raised-button color="warn" style="width: 700px; margin-bottom: 10px; margin-left: 7px;"
+                    (click)="backToBooking()">Back</button>
+                    <button mat-raised-button color="primary" style="width: 700px;"
+                    type="submit" (click)="bookingConform()">Conform</button>
+                  </mat-dialog-actions>
+                </div>
+              </form>
+          </div>
+        </div>
+   </div>
+</div>

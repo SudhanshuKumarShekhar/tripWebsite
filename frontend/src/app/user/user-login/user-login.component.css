@@ -1,0 +1,26 @@
+
+h3{
+  margin-left: 45%;
+  font-family: cursive;
+}
+.card{
+  min-height: 550px;
+  box-shadow: 20px 20px 80px  rgb(218,218,218);
+  border-radius: 12px;
+}
+.card-header{
+  font-size:30px;
+  color:white;
+}
+.mat-label{
+  font-size: xx-large;
+}
+mat-form-field{
+  margin-left: 45px;
+}
+#forget{
+  cursor:pointer;
+}
+.btn{
+  border-radius: 20px;
+}

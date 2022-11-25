@@ -1,0 +1,120 @@
+{
+  "Properties": [
+    {
+      "Name": "Mumbai",
+      "Image": "pic-1",
+      "Price": 12000,
+      "Address": "Mumbai,India",
+      "id": 1
+    },
+    {
+      "Name": "Delhi",
+      "Price": 15000,
+      "Address": "India",
+      "id": 2
+    },
+    {
+      "Name": "Pakistan",
+      "Image": "pic-3",
+      "Address": "PAK",
+      "Price": 50000,
+      "id": 3
+    },
+    {
+      "Name": "Amerika",
+      "Image": "pic-1",
+      "Address": "USA",
+      "Price": 121000,
+      "id": 4
+    },
+    {
+      "Name": "Rajgir",
+      "Price": 12000,
+      "Address": "Bihar, India",
+      "Description": "beauty city",
+      "id": 5
+    },
+    {
+      "Name": "Kolkata",
+      "Price": 20000,
+      "Address": "Wb",
+      "Description": "Nice",
+      "id": 6
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "user": [
+    {
+      "userName": "admin",
+      "email": "admin@123gmail.com",
+      "password": "admin@123",
+      "confirmPassword": "admin@123",
+      "mobile": "6587458745",
+      "type": "admin",
+      "id": 0
+    },
+    {
+      "userName": "Sudhanshu",
+      "email": "sudhanshu@123gmail.com",
+      "password": "Sudhanshu@123",
+      "confirmPassword": "Sudhanshu@123",
+      "mobile": "6587458745",
+      "type": "user",
+      "id": 1
+    },
+    {
+      "userName": "Pinky",
+      "email": "pinky@gmail.com",
+      "password": "pinky@123",
+      "confirmPassword": "pinky@123",
+      "mobile": "5687458475",
+      "type": "user",
+      "id": 2
+    },
+    {
+      "userName": "Rupa",
+      "email": "rupa@123gmail.com",
+      "password": "rupa@123",
+      "confirmPassword": "rupa@123",
+      "mobile": "6985747895",
+      "type": "user",
+      "id": 3
+    },
+    {
+      "userName": "Shalini",
+      "email": "Shalini@123gmail.com",
+      "password": "Shalini@123",
+      "confirmPassword": "Shalini@123",
+      "mobile": "6587484875",
+      "type": "user",
+      "id": 4
+    },
+    {
+      "userName": "Sumit",
+      "email": "sumait@gmail.com",
+      "password": "sumit@123",
+      "confirmPassword": "sumit@123",
+      "mobile": "6854752894",
+      "type": "user",
+      "id": 5
+    },
+    {
+      "userName": "Ram",
+      "email": "ram@gmail.com",
+      "password": "ram@123",
+      "confirmPassword": "ram@123",
+      "mobile": "234567896",
+      "type": "user",
+      "id": 6
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

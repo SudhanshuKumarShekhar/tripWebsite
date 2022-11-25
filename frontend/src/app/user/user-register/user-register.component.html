@@ -1,0 +1,64 @@
+
+<div class="row">
+  <div class="col-6 m-auto">
+  <div class="card m-auto">
+    <div class="card-header">
+      <h3> <span><i class="fa fa-user-o" aria-hidden="true"></i></span> Register</h3>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
+        <div class="form-group col-12">
+          <p>
+            <mat-form-field appearance="outline" class="mat-form-field col-10">
+              <mat-label> <span><i class="fa fa-user-circle" aria-hidden="true"></i></span> Name</mat-label>
+              <input matInput placeholder="Enter Name" required formControlName="userName">
+              <mat-icon matSuffix><i class="fa fa-smile-o" aria-hidden="true"></i></mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div class="form-group col-12">
+          <p>
+            <mat-form-field appearance="outline" class="mat-form-field col-10">
+              <mat-label> <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span> Email</mat-label>
+              <input matInput placeholder="Enter email" required formControlName="email">
+              <mat-icon matSuffix><i class="fa fa-smile-o" aria-hidden="true"></i></mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div class="form-group col-12">
+          <p>
+            <mat-form-field appearance="outline" class="mat-form-field col-10">
+              <mat-label> <span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span> Password</mat-label>
+              <input [type]="type" matInput placeholder="Enter Password" required formControlName="password">
+              <mat-icon matSuffix><span (click)="hideShoewPassword()" class="fa {{eyeIcon}}" aria-hidden="true"></span></mat-icon>
+            </mat-form-field>
+          </p>
+
+        </div>
+        <div class="form-group col-12">
+          <p>
+            <mat-form-field appearance="outline" class="mat-form-field col-10" >
+              <mat-label> <span><i class="fa fa-mobile" aria-hidden="true"></i></span> Mobile</mat-label>
+              <input type="number" matInput placeholder="Enter Password" required formControlName="mobile">
+              <mat-icon matSuffix><i class="fa fa-smile-o" aria-hidden="true"></i></mat-icon>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="form-group col-12">
+
+          <button type="reset"  class="btn btn-secondary"style="margin-left: 20%;">Cancel</button>
+          <button type="submit" class="btn btn-primary"  [disabled]="!registerationForm.valid" style="margin-left: 10%;"><span><i class="fa fa-sign-in" aria-hidden="true"></i>
+          </span> Sign up </button>
+        </div>
+      </form>
+      <div class="text-center text-muted col-8 mt-3"
+            style="margin-left: 16%; margin-top: 8%;" >Arleady have account?
+            <a id="forget" routerLink="/user/login">Login</a>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
+

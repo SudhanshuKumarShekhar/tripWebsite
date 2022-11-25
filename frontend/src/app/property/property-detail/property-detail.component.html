@@ -1,0 +1,43 @@
+<div class="row shadow">
+  <div class="col-sm-4 p-0">
+    <div class="card">
+        <div class="card-img-wrapper">
+          <img class="propImg" src="assets/image/img-default.jpg"alt="">
+        <div class="card-body p-2">
+          <h2>{{trip.name}}</h2>
+          <h4>{{trip.address}}</h4>
+          <h6 class="mb-0">₹<span class="font-highligt">  {{trip.price}}</span>/Person
+            <span *ngIf="!hideIcons"><button *ngIf="loggedinUser() && (logginUser.role=='user')" (click)="openDialog()" mat-raised-button color="primary"style="margin-left: 60px; margin-top:auto;"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">Book</button>
+              <button *ngIf="!loggedinUser()" routerLink="/user/login" mat-raised-button color="primary"style="margin-left: 60px; margin-top:auto;"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">Book</button>
+              </span>
+          </h6>
+          <hr class="mt-0 mb-2">
+          <h6>Would you like this Place? </h6>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button class="btn btn-primary">Like</button>
+            <button class="btn btn-success">Message</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+  <div class="col-sm-8">
+    <div class="tab-panel">
+      <tabset class="member-tabset">
+        <tab heading="Overview">
+          <h6>{{trip.Description}}</h6>
+        </tab>
+        <tab heading="Photos">
+
+        </tab>
+        <tab heading="Contact">
+
+        </tab>
+      </tabset>
+    </div>
+</div>
+
